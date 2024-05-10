@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "BHOZdEuCKUWo+znfWt4+TxASMEWLsk9TI5vnUyqF0CzLIzWQ69tIcA8Ged1ullUWIfWxm4rtnxtAvn2FLDuQrg==",
+  "success": true,
+  "projectFilePath": "/home/abner/Documents/Github/Inteli/Ponderada-semana-4-ES10/ConsoleApp-metrics/ConsoleApp-metrics/ConsoleApp-metrics.csproj",
+  "expectedPackageFiles": [
+    "/home/abner/.nuget/packages/microsoft.extensions.dependencyinjection/8.0.0/microsoft.extensions.dependencyinjection.8.0.0.nupkg.sha512",
+    "/home/abner/.nuget/packages/microsoft.extensions.dependencyinjection.abstractions/8.0.0/microsoft.extensions.dependencyinjection.abstractions.8.0.0.nupkg.sha512",
+    "/home/abner/.nuget/packages/system.diagnostics.diagnosticsource/8.0.1/system.diagnostics.diagnosticsource.8.0.1.nupkg.sha512"
+  ],
+  "logs": []
+}
