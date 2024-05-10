@@ -13,21 +13,21 @@ Neste relatório, registrei nosso progresso na implementação de métricas pers
 
 ### Conceitos Aprendidos
 - Criação de Métricas Personalizadas:
-  - Utilizamos a classe Meter para criar um grupo nomeado de instrumentos.
-  - Criamos instrumentos do tipo Counter para registrar contagens.
-  - Aprendemos a utilizar a API CreateCounter para criar instrumentos do tipo Counter.
+  - Utilizei a classe Meter para criar um grupo nomeado de instrumentos.
+  - Criei instrumentos do tipo Counter para registrar contagens.
+  - Aprendi a utilizar a API CreateCounter para criar instrumentos do tipo Counter.
 
 <br>
 
 - Tipos de Instrumentos Disponíveis:
-  - Exploramos diferentes tipos de instrumentos, incluindo Counter, UpDownCounter, ObservableCounter, Histogram, e ObservableGauge.
-  - Compreendemos as diferenças entre eles e suas aplicações práticas.
+  - Diferentes tipos de instrumentos, incluindo Counter, UpDownCounter, ObservableCounter, Histogram, e ObservableGauge.
+  - Diferenças entre eles e suas aplicações práticas.
 
 <br>
 
 - Práticas Recomendadas:
-  - Aprendemos boas práticas, como a criação de medidores apenas uma vez para códigos não destinados à DI e seguir diretrizes de nomenclatura para instrumentos e marcas.
-  - Entendemos a importância de sincronização em acessos concorrentes e o impacto no desempenho.
+  - Aprendi boas práticas, como a criação de medidores apenas uma vez para códigos não destinados à DI e seguir diretrizes de nomenclatura para instrumentos e marcas.
+  - A importância de sincronização em acessos concorrentes e o impacto no desempenho.
 
 
 ### Execução do Programa
