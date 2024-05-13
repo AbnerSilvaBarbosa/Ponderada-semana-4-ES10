@@ -20,36 +20,40 @@ namespace ConsoleApp_metrics
             meter.CreateObservableGauge<int>("hatco.store.orders_pending", () => _ordersPending);
         }
 
-        public void HatsSold(int quantity)
+        private void HatsSold(int quantity)
         {
             _hatsSold.Add(quantity);
         }
 
-        public void RecordOrderProcessingTime(double time)
+        private void RecordOrderProcessingTime(double time)
         {
             _orderProcessingTime.Record(time);
         }
 
-        public void SimulateCoatSale()
+        private void SimulateCoatSale()
         {
-            _coatsSold += 3;
+            _coatsSold += 5;
         }
 
-        public void SimulateOrderQueue()
+        private void SimulateOrderQueue()
         {
-            _ordersPending = _rand.Next(0, 20);
+            _ordersPending = _rand.Next(0, 25);
         }
 
-        public void SimulateMetrics()
+        public void SimulateMetricsAbner()
         {
-            HatsSold(4);
+            HatsSold(5);
             SimulateCoatSale();
             SimulateOrderQueue();
-            RecordOrderProcessingTime(_rand.Next(5, 15) / 1000.0); 
+            RecordOrderProcessingTime(_rand.Next(5, 15) / 1000.0);
         }
 
-        public void getMetrics(){
+        public void GetMetrics()
+        {
             Console.WriteLine(_hatsSold);
+            Console.WriteLine(_ordersPending);
+            Console.WriteLine(_orderProcessingTime);
+            Console.WriteLine(_coatsSold);
         }
     }
 }

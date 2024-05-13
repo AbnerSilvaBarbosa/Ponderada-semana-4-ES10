@@ -12,13 +12,13 @@ var app = builder.Build();
 
 app.MapGet("/", (HatCoMetrics hatCoMetrics) =>
 {
-    hatCoMetrics.SimulateMetrics();
+    hatCoMetrics.SimulateMetricsAbner();
     return "Metrics Updated";
 });
 
-app.MapGet("/metric",(HatCoMetrics hatCoMetrics) =>
+app.MapGet("/metric", (HatCoMetrics hatCoMetrics) =>
 {
-    hatCoMetrics.getMetrics();
+    hatCoMetrics.GetMetrics();
     return "get Metrics";
 });
 

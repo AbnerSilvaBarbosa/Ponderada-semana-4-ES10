@@ -36,6 +36,95 @@ Para inicializar a aplicação eu apenas executei o arquivo <code>ConsoleApp-met
 
 **Alem de ter o dotnet na maquina na versão 8^**
 
+### Códigos implementados para registrar e modificar as metricas (Prints e codigo)
+
+O codigo abaixo representa o Program.cs, com a inicialização de uma API além de ter começado a registrar as metricas
+
+![localhost](./Assets/classProgram.png)
+
+```csharp
+
+// Rota para dar update nas metricas em outra class.
+app.MapGet("/", (HatCoMetrics hatCoMetrics) =>
+{
+    hatCoMetrics.SimulateMetricsAbner();
+    return "Metrics Updated";
+});
+
+// Rota para printar no console.log as metricas registradas.
+app.MapGet("/metric", (HatCoMetrics hatCoMetrics) =>
+{
+    hatCoMetrics.GetMetrics();
+    return "get Metrics";
+});
+
+app.Run();
+
+public partial class Program
+{
+    static Meter s_meter = new Meter("HatCo.Store");
+    static Counter<int> s_hatsSold = s_meter.CreateCounter<int>("hatco.store.hats_sold");
+    static ObservableCounter<int> s_coatsSold = s_meter.CreateObservableCounter<int>("hatco.store.coats_sold", () => s_rand.Next(1, 10));
+    static Random s_rand = new Random();
+
+    public static void Main(string[] args)
+    {
+        Console.WriteLine(s_hatsSold);
+        Console.WriteLine(s_coatsSold);
+
+        while (!Console.KeyAvailable)
+        {
+            Thread.Sleep(1000);
+            s_hatsSold.Add(4);
+        }
+    }
+}
+
+```
+<br>
+
+O codigo abaixo representa o HatCoMetrics.cs, onde tem as funções para simular os valores das metricas criadas, sendo possivel ver a função de simular as metricas (SimulateMetricsAbner) e a função para printar as metricas (GetMetrics).
+
+![localhost](./Assets/classHatCoMetrics.png)
+
+```csharp
+        private void HatsSold(int quantity)
+        {
+            _hatsSold.Add(quantity);
+        }
+
+        private void RecordOrderProcessingTime(double time)
+        {
+            _orderProcessingTime.Record(time);
+        }
+
+        private void SimulateCoatSale()
+        {
+            _coatsSold += 5;
+        }
+
+        private void SimulateOrderQueue()
+        {
+            _ordersPending = _rand.Next(0, 25);
+        }
+
+        public void SimulateMetricsAbner()
+        {
+            HatsSold(5);
+            SimulateCoatSale();
+            SimulateOrderQueue();
+            RecordOrderProcessingTime(_rand.Next(5, 15) / 1000.0);
+        }
+
+        public void GetMetrics()
+        {
+            Console.WriteLine(_hatsSold);
+            Console.WriteLine(_ordersPending);
+            Console.WriteLine(_orderProcessingTime);
+            Console.WriteLine(_coatsSold);
+        }
+```
+
 
 Abaixo estão os prints da execução do programa exibindo as saídas do console/terminal:
 

@@ -33,3 +33,4 @@
 /home/abner/Documents/Github/Inteli/Ponderada-semana-4-ES10/ConsoleApp-metrics/ConsoleApp-metrics/obj/Debug/net8.0/ConsoleApp-metrics.pdb
 /home/abner/Documents/Github/Inteli/Ponderada-semana-4-ES10/ConsoleApp-metrics/ConsoleApp-metrics/obj/Debug/net8.0/ConsoleApp-metrics.genruntimeconfig.cache
 /home/abner/Documents/Github/Inteli/Ponderada-semana-4-ES10/ConsoleApp-metrics/ConsoleApp-metrics/obj/Debug/net8.0/ref/ConsoleApp-metrics.dll
+/home/abner/Documents/Github/Inteli/Ponderada-semana-4-ES10/ConsoleApp-metrics/ConsoleApp-metrics/obj/Debug/net8.0/ConsoleApp-metrics.sourcelink.json
